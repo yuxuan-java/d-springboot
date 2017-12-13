@@ -1,6 +1,9 @@
 package org.yuxuan.springboot;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,9 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 @org.springframework.boot.autoconfigure.SpringBootApplication
 public class SpringBootApplication {
 	
+	@Value("${book.author}")
+	private String bookAuthor;
+	
+	@Value("${book.name}")
+	private String bookName;
+	
 	@RequestMapping("/")
 	String index() {
-		return "Hello Spring Boot";
+		return "bookName: " + bookName + " --- bookAuthor: " + bookAuthor;
 	}
 	
 	/**
@@ -26,6 +35,16 @@ public class SpringBootApplication {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootApplication.class, args);
+		
+		//	换一种启动方式:关闭banner启动
+//		SpringApplication app = new SpringApplication(SpringBootApplication.class);
+//		app.setBannerMode(Banner.Mode.OFF);//	
+//		app.run(args);
+		
+		//	使用fluent Api启动，关闭banner
+//		new SpringApplicationBuilder(SpringBootApplication.class)
+//			.bannerMode(Banner.Mode.OFF)
+//			.run(args);
 	}
 	
 }
