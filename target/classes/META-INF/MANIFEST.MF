@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Vendor: Pivotal Software, Inc.
 Implementation-Title: springboot-demo
 Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: org.yuxuan
-Build-Jdk: 1.7.0_80
 Built-By: hjm
-Created-By: Maven Integration for Eclipse
+Implementation-Vendor-Id: org.yuxuan
+Build-Jdk: 1.8.0_152
 Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 
